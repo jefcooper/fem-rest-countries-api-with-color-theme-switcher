@@ -1,0 +1,14 @@
+@use "sass:color";
+@use "colors";
+@use "light";
+
+@mixin theme--dark {
+  @include light.theme--light;
+  --theme-bg: #{colors.$clr-neutral-800};
+  --theme-clr: #{colors.$clr-neutral-100};
+}
+
+.theme--dark {
+  @include theme--dark;
+  color-scheme: only dark;
+}

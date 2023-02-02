@@ -1,0 +1,38 @@
+/*******************************************************************************
+ * Typography
+ *
+ *******************************************************************************/
+
+@use "../abstracts/mixins";
+
+@mixin font-base {
+  font-family: "Nunito Sans";
+  font-weight: 300;
+  font-size: 1rem;
+  font-style: normal;
+  text-decoration: none;
+  line-height: 1;
+}
+
+/*
+ *  heading--1: title
+ */
+.heading--1 {
+  @include font-base;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.text--center {
+  text-align: center;
+}
+
+/*----------------------------------------------------------------------------
+  Tablet breakpoint
+ ----------------------------------------------------------------------------*/
+@include mixins.media-breakpoint("tablet") {
+  .heading--1 {
+    font-size: 4rem;
+  }
+}
