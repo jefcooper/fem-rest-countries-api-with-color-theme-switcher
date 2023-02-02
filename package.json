@@ -1,7 +1,7 @@
 {
-  "name": "fem-template",
+  "name": "fem-rest-countries-api-with-color-theme-switcher",
   "version": "1.0.0",
-  "description": "Front-end mentor Template Repository",
+  "description": "Front-end mentor REST Countries API With Color Theme Switcher",
   "main": "index.js",
   "scripts": {
     "start": "vite",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jefcooper/fem-template.git"
+    "url": "git+https://github.com/jefcooper/fem-rest-countries-api-with-color-theme-switcher.git"
   },
   "author": "Jeff Cooper",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jefcooper/fem-template/issues"
+    "url": "https://github.com/jefcooper/fem-rest-countries-api-with-color-theme-switcher/issues"
   },
-  "homepage": "https://github.com/jefcooper/fem-template#readme",
+  "homepage": "https://github.com/jefcooper/fem-rest-countries-api-with-color-theme-switcher#readme",
   "devDependencies": {
     "glob": "^8.0.3",
     "path": "^0.12.7",
