@@ -1,7 +1,9 @@
 import { promises as fs } from "fs";
+import path from "path";
 
 export default async function (request, response) {
-  const countriesData = await fs.readFile("api/data/countries.json", "utf8");
+  const dataDir = path.join(process.cwd(), "data");
+  const countriesData = await fs.readFile(dataDir + "/countries.json", "utf8");
   const data = JSON.parse(countriesData);
 
   let result;
