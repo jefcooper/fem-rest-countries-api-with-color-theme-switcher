@@ -6,7 +6,7 @@ export default async function (request, response) {
   const countrycode = request.query.countrycode;
   try {
     const countryData = await fs.readFile(
-      dataDir + "/data/" + countrycode + ".json",
+      dataDir + "/" + countrycode + ".json",
       "utf8"
     );
     response.status(200).json(JSON.parse(countryData));
