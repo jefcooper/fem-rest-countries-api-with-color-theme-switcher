@@ -2,7 +2,7 @@
 @use "colors";
 
 @mixin theme--light {
-  --theme-bg: #{colors.$clr-neutral-50};
+  --theme-bg: #{colors.$clr-neutral-100};
   --theme-clr: #{colors.$clr-neutral-800};
 }
 
