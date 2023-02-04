@@ -1,1 +1,2 @@
 import "./prefersColorScheme";
+import "./search";

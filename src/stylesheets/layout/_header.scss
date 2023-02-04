@@ -3,6 +3,7 @@
 .header {
   background-color: var(--theme-header-bg);
   box-shadow: var(--theme-header-shadow);
+  transition: all var(--transition-default-time) ease-in;
 }
 
 .header__container {
@@ -10,11 +11,11 @@
   display: flex;
   justify-content: space-between;
   padding-block: 1rem;
-  padding-inline: 1rem;
 }
 
 .header__logo {
   padding: 0.5rem;
+  user-select: none;
 }
 .header__dark-mode-label {
   display: grid;

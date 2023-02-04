@@ -44,7 +44,15 @@ This is a solution to the [REST Countries API with color theme switcher](https:/
 - vercel
 - npm / vite
 
-### What I learned
+### To Do
+
+- Search bar layout with region selection dropdown
+
+### Extra Features
+
+- permalink for country details page
+- permalink for region selection
+- paginated infinite scrolling on search result
 
 ### Bugs and Finishing Steps
 

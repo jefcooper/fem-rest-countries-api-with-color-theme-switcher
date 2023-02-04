@@ -4,6 +4,7 @@
   color: var(--theme-clr);
   background-color: var(--theme-bg);
   @include typography.font-base;
+  transition: all var(--transition-default-time) ease-in;
 }
 
 a:focus-visible {

@@ -33,13 +33,37 @@
 
   <main class="main">
     <h1 class="visually-hidden">Search for countries</h1>
-    <!--
-      <svg class="icon icon--search">
-        <use href="./assets/icons.svg#icon--search"></use>
-      </svg>
-      -->
-    <!-- Search -- Filter by Region -->
-    <!-- country cards in grid -->
+
+    <section class="search">
+      <div class="search__input">
+        <input autofocus data-search-input type="text" class="search__input input" id="search__input"
+          placeholder="Search for a country...">
+        <label for="search__input" class="search__input-label input__label">
+          <svg class="icon icon--search">
+            <use href="./assets/icons.svg#icon--search"></use>
+          </svg>
+        </label>
+      </div>
+      <!-- Search --> <!-- Filter by region -->
+      <label class="visually-hidden" for="search__region-select" id="search__region-select-label">Filter by
+        Region</label>
+      <div class="select dropdown" data-select>
+        <select id="search__region-select" class="dropdown__select" data-region-select>
+          <option value="placeholder">Filter by Region</option>
+          <option value="Africa">Africa</option>
+          <option value="America">America</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+        <span class="select__focus"></span>
+      </div>
+    </section>
+
+    <div class="section results">
+      <ul class="results__list" data-search-results></ul>
+      <!-- country cards in grid -->
+    </div>
   </main>
 
 </body>

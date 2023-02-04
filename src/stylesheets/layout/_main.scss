@@ -1,2 +1,5 @@
+@use "../abstracts/mixins";
+
 .main {
+  @include mixins.container;
 }
