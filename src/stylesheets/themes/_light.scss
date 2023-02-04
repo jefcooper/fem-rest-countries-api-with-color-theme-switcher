@@ -4,6 +4,10 @@
 @mixin theme--light {
   --theme-bg: #{colors.$clr-neutral-200};
   --theme-clr: #{colors.$clr-neutral-900};
+  --theme-header-bg: #{colors.$clr-neutral-100};
+  --theme-header-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06);
+  --theme-icon-fill: transparent;
+  --theme-icon-stroke: #{colors.$clr-neutral-800};
 }
 
 .theme--light {

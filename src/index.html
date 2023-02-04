@@ -12,21 +12,36 @@
   <title>Front-end Mentor REST Countries API</title>
 
   <link rel="stylesheet" href="stylesheets/main.scss">
+  <script src="scripts/script.js" type="module"></script>
 </head>
 
-<body class="theme--default">
+<body class="body theme--default">
 
-  <header>
-    <a href="#" class="heading--1">Where in the world?</a>
-    <!-- Title -- Dark Mode Toggle -->
-    <!-- Search -- Filter by Region -->
+  <header class="header">
+    <div class="header__container">
+      <a href="#" class="heading--1">Where in the world?</a>
+      <input type="checkbox" id="dark-mode-toggle" class="visually-hidden" data-dark-mode-toggle>
+      <label for="dark-mode-toggle" class="header__dark-mode-label">
+        <svg class="icon icon--moon" aria-hidden="true">
+          <use href="./assets/icons.svg#icon--moon"></use>
+        </svg>
+        <span>Dark Mode</span>
+      </label>
+    </div>
   </header>
 
-  <main>
+  <main class="main">
     <h1 class="visually-hidden">Search for countries</h1>
+    <!--
+      <svg class="icon icon--search">
+        <use href="./assets/icons.svg#icon--search"></use>
+      </svg>
+      -->
+    <!-- Search -- Filter by Region -->
     <!-- country cards in grid -->
   </main>
 
 </body>
+
 
 </html>

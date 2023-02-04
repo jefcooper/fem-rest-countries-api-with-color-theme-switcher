@@ -1,0 +1,23 @@
+@use "../abstracts/mixins";
+
+.header {
+  background-color: var(--theme-header-bg);
+  box-shadow: var(--theme-header-shadow);
+}
+
+.header__container {
+  @include mixins.container;
+  display: flex;
+  justify-content: space-between;
+  padding-block: 1.5rem;
+  padding-inline: 1rem;
+}
+
+.header__dark-mode-label {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+  cursor: pointer;
+}

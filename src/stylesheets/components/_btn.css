@@ -1,0 +1,11 @@
+.btn {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+}

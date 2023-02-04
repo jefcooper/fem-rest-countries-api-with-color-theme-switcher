@@ -2,7 +2,7 @@
 
 .body {
   color: var(--theme-clr);
-  background-color: var(--theme-clr-bg);
+  background-color: var(--theme-bg);
   @include typography.font-base;
 }
 

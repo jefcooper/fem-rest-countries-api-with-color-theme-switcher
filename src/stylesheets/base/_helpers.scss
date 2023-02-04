@@ -27,3 +27,11 @@
 .visually-hidden {
   @include visually-hidden-mixin;
 }
+
+.container {
+  @include abstracts.container;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
