@@ -14,6 +14,7 @@ console.log(searchInput);
 
 let regions;
 regionSearch();
+performSearch();
 
 // start simple with enter and click handler
 searchInput.addEventListener("keydown", async function (evt) {
@@ -25,9 +26,9 @@ searchInput.addEventListener("keydown", async function (evt) {
 
 async function performSearch() {
   const result = await countrySearch(searchInput.value);
-  const filteredResult = result.filter(
-    (val) => !searchFilter || searchFilter.has(val[1])
-  );
+  const filteredResult = result
+    .filter((val) => !searchFilter || searchFilter.has(val[1]))
+    .sort((a, b) => a[0].localeCompare(b[0]));
   fillSearchResults(filteredResult);
 }
 
