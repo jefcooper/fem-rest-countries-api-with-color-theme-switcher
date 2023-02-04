@@ -9,15 +9,25 @@
   @include mixins.container;
   display: flex;
   justify-content: space-between;
-  padding-block: 1.5rem;
+  padding-block: 1rem;
   padding-inline: 1rem;
 }
 
+.header__logo {
+  padding: 0.5rem;
+}
 .header__dark-mode-label {
   display: grid;
   grid-auto-flow: column;
   align-items: center;
   gap: 0.5rem;
+  padding-inline: 0.5rem;
   user-select: none;
   cursor: pointer;
+}
+
+.header__dark-mode-input:focus-visible ~ .header__dark-mode-label {
+  border-radius: 0.1rem;
+  outline: 2px solid;
+  outline-color: var(--theme-clr-focus);
 }
