@@ -5,11 +5,68 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="description" content="Front-end Mentor REST Countries API with Color Theme Switcher Challenge">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <title>Country Search</title>
+
+  <link rel="stylesheet" href="stylesheets/main.scss">
+  <script src="scripts/script.js" type="module"></script>
 </head>
 
-<body>
-  <h1>REST Countries API with color theme switcher</h1>
+<body class="body theme--default">
+
+  <header class="header">
+    <div class="header__container">
+      <a href="#" class="heading--1 header__logo">Where in the world?</a>
+      <input type="checkbox" id="dark-mode-toggle" class="visually-hidden header__dark-mode-input"
+        data-dark-mode-toggle>
+      <label for="dark-mode-toggle" class="header__dark-mode-label">
+        <svg class="icon icon--moon" aria-hidden="true">
+          <use href="./assets/icons.svg#icon--moon"></use>
+        </svg>
+        <span>Dark Mode</span>
+      </label>
+    </div>
+  </header>
+
+  <main class="main">
+    <h1 class="visually-hidden">Search for countries</h1>
+
+    <section class="search">
+      <div class="search__input">
+        <input autofocus data-search-input type="text" class="search__input input" id="search__input"
+          placeholder="Search for a country...">
+        <label for="search__input" class="search__input-label input__label">
+          <svg class="icon icon--search">
+            <use href="./assets/icons.svg#icon--search"></use>
+          </svg>
+        </label>
+      </div>
+      <!-- Search --> <!-- Filter by region -->
+      <label class="visually-hidden" for="search__region-select" id="search__region-select-label">Filter by
+        Region</label>
+      <div class="select dropdown" data-select>
+        <select id="search__region-select" class="dropdown__select" data-region-select>
+          <option value="placeholder">Filter by Region</option>
+          <option value="Africa">Africa</option>
+          <option value="America">America</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+        <span class="select__focus"></span>
+      </div>
+    </section>
+
+    <div class="section results">
+      <ul class="results__list" data-search-results></ul>
+      <!-- country cards in grid -->
+    </div>
+  </main>
+
 </body>
+
 
 </html>

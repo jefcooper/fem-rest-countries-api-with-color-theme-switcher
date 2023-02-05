@@ -44,11 +44,22 @@ This is a solution to the [REST Countries API with color theme switcher](https:/
 - vercel
 - npm / vite
 
-### What I learned
+### To Do
+
+- Search bar layout with region selection dropdown
+
+### Extra Features
+
+- permalink for country details page
+- permalink for region selection
+- paginated infinite scrolling on search result
+- use IntersectionObserver to hydrate content such as flag and country details when it's scrolled into view
 
 ### Bugs and Finishing Steps
 
 ### Useful resources
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 
 #### Tooling
 

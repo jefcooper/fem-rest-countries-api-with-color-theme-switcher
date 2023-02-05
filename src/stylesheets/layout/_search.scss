@@ -1,0 +1,37 @@
+@use "../abstracts/mixins";
+
+.search {
+  display: grid;
+  align-items: center;
+  margin-top: 2rem;
+}
+.search input {
+  border: none;
+  box-shadow: var(--theme-element-shadow);
+  border-radius: var(--theme-element-border-radius);
+  background-color: var(--theme-element-bg);
+  outline-color: var(--theme-clr-focus);
+  padding-left: 4rem;
+}
+.search__input {
+  position: relative;
+}
+.search__input .icon--search {
+  fill: var(--theme-search-clr);
+}
+.search__input-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2rem;
+}
+
+/*----------------------------------------------------------------------------
+  Tablet breakpoint
+ ----------------------------------------------------------------------------*/
+@include mixins.media-breakpoint("tablet") {
+  .search {
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
+}
