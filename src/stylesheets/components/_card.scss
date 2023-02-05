@@ -8,6 +8,10 @@
 }
 .card__flag {
   box-shadow: var(--theme-card-shadow);
+  max-height: 52%;
+  margin-inline: auto;
+}
+.card__population {
 }
 .card__info {
   position: absolute;
