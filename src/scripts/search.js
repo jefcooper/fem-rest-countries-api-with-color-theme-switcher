@@ -8,10 +8,11 @@ const searchInput = document.querySelector("[data-search-input]");
 const regionSelect = document.querySelector("[data-region-select]");
 const searchResults = document.querySelector("[data-search-results]");
 let searchFilter;
+let regions;
 
 console.log("initializing searchInput");
 
-let regions;
+const filterRegion = new URLSearchParams(location.search).get("region");
 
 if (searchInput) {
   regionSearch();
@@ -77,13 +78,17 @@ async function fillSearchResults(result) {
 }
 
 regionSelect?.addEventListener("change", (evt) => {
-  if (evt.target.value === "all") {
+  updateRegionFilter(evt.target.value);
+  location.assign("/index.html?region=" + evt.target.value);
+});
+
+function updateRegionFilter(regionName) {
+  if (!regionName || regionName === "all") {
     searchFilter = null;
   } else {
-    searchFilter = new Set(regions[evt.target.value]);
+    searchFilter = new Set(regions[regionName]);
   }
-  performSearch();
-});
+}
 
 async function countrySearch(name) {
   const result = await fetch("/api/countries?search=" + name);
@@ -131,4 +136,8 @@ function initializeRegionOptions(data) {
   regionNames.forEach((name) => {
     element("option").text(name).attribute("value", name).addTo(regionSelect);
   });
+  if (filterRegion) {
+    regionSelect.value = filterRegion;
+    updateRegionFilter(filterRegion);
+  }
 }
