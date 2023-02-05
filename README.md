@@ -46,11 +46,13 @@ This is a solution to the [REST Countries API with color theme switcher](https:/
 
 ### To Do
 
-- Search bar layout with region selection dropdown
+- ~~update selection on each character typed, with setTimeout to wait for pause in typing~~
+- ~~escape key on input to clear,~~ maybe a clickable X on the right to do same with mouse.
+- detail page formatting
 
 ### Extra Features
 
-- permalink for country details page
+- ~~permalink for country details page~~
 - permalink for region selection
 - paginated infinite scrolling on search result
 - use IntersectionObserver to hydrate content such as flag and country details when it's scrolled into view

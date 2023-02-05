@@ -18,11 +18,22 @@ if (searchInput) {
   performSearch();
 }
 
+let timer;
+
 // start simple with enter and click handler
 searchInput?.addEventListener("keydown", async function (evt) {
   if (evt.key === "Enter") {
     performSearch();
+  } else if (evt.key === "Escape") {
+    searchInput.value = "";
+    performSearch();
   } else {
+    if (timer) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(() => {
+      performSearch();
+    }, 750);
   }
 });
 
