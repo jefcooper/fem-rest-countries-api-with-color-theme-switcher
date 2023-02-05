@@ -11,8 +11,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <title>Country Detail</title>
 
-  <link rel="stylesheet" href="stylesheets/main.scss">
-  <script src="scripts/script.js" type="module"></script>
+  <link rel="stylesheet" href="../stylesheets/main.scss">
+  <script src="../scripts/script.js" type="module"></script>
 </head>
 
 <body class="body theme--default">
@@ -24,7 +24,7 @@
         data-dark-mode-toggle>
       <label for="dark-mode-toggle" class="header__dark-mode-label">
         <svg class="icon icon--moon" aria-hidden="true">
-          <use href="./assets/icons.svg#icon--moon"></use>
+          <use href="../assets/icons.svg#icon--moon"></use>
         </svg>
         <span>Dark Mode</span>
       </label>
@@ -33,13 +33,54 @@
 
   <main class="main">
     <h1 class="visually-hidden">Country Details</h1>
+
+    <h2 data-country-name></h2>
+    <img data-country-flag src="" alt="">
+
+    <dl>
+      <dt>Native Name</dt>
+      <dd data-country-native-name></dd>
+
+      <dt>Population</dt>
+      <dd data-country-population></dd>
+
+      <dt>Region</dt>
+      <dd data-country-region></dd>
+
+      <dt>Sub-region</dt>
+      <dd data-country-subregion></dd>
+
+      <dt>Capital</dt>
+      <dd data-country-capital></dd>
+
+      <dt>Top-level Domain</dt>
+      <dd data-country-top-level-domain></dd>
+
+      <dt>Currencies</dt>
+      <dd data-country-currencies></dd>
+
+      <dt>Languages</dt>
+      <dd data-country-languages></dd>
+
+      <dt>Border Countries</dt>
+      <dd data-country-border-countries></dd>
+    </dl>
+
     <!--
-      <svg class="icon icon--search">
-        <use href="./assets/icons.svg#icon--search"></use>
-      </svg>
-      -->
-    <!-- Search -- Filter by Region -->
-    <!-- country cards in grid -->
+      back link arrow
+      name
+      flag
+      native name
+      population
+      region
+      sub-region
+      capital
+      top-level domain
+      currencies
+      languages
+
+      border countries
+    -->
   </main>
 
 </body>

@@ -10,14 +10,16 @@ const searchResults = document.querySelector("[data-search-results]");
 let searchFilter;
 
 console.log("initializing searchInput");
-console.log(searchInput);
 
 let regions;
-regionSearch();
-performSearch();
+
+if (searchInput) {
+  regionSearch();
+  performSearch();
+}
 
 // start simple with enter and click handler
-searchInput.addEventListener("keydown", async function (evt) {
+searchInput?.addEventListener("keydown", async function (evt) {
   if (evt.key === "Enter") {
     performSearch();
   } else {
@@ -35,30 +37,28 @@ async function performSearch() {
 function fillSearchResults(result) {
   searchResults.innerText = "";
   result.forEach((country) => {
-    console.log(country);
-    element("li").text(country[0]).addTo(searchResults);
+    const liEl = element("li").addTo(searchResults);
+    element("a")
+      .attribute("href", "/country.html?country=" + country[1])
+      .text(country[0])
+      .addTo(liEl);
   });
 }
 
-regionSelect.addEventListener("change", (evt) => {
-  console.log(evt.target.value);
+regionSelect?.addEventListener("change", (evt) => {
   if (evt.target.value === "all") {
     searchFilter = null;
   } else {
     searchFilter = new Set(regions[evt.target.value]);
-    console.log("search filter: " + Array.from(searchFilter.values()));
   }
   performSearch();
 });
 
 async function countrySearch(name) {
-  console.log("country search: " + name);
   const result = await fetch("/api/countries?search=" + name);
   if (result.status !== 200) {
-    console.log("failed: " + result.status);
     return;
   } else {
-    console.log("success");
     const data = await result.json();
     return data;
   }
@@ -67,7 +67,6 @@ async function countrySearch(name) {
 async function regionSearch() {
   const result = await fetch("/api/regions");
   if (result.status !== 200) {
-    console.log("failed: " + result.status);
   } else {
     const data = await result.json();
     regions = data;
@@ -76,13 +75,10 @@ async function regionSearch() {
 }
 
 function initializeRegionOptions(data) {
-  console.log(regionSelect);
   regionSelect.innerText = "";
-  console.log(JSON.stringify(regions));
   const regionNames = Object.entries(regions)
     .map(([region, names]) => region)
     .sort();
-  console.log(regionNames);
   element("option")
     .text("Filter by Region")
     .attribute("value", "all")
