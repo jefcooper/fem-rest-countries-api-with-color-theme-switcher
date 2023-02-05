@@ -1,2 +1,12 @@
 .results {
+  margin-top: 2.5rem;
+  padding-inline: 0.75rem;
+}
+.results__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
 }
