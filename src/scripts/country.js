@@ -64,12 +64,14 @@ async function loadCountry(country) {
     //countryBorderCountries.innerText = data.borders.join(", ");
     const borderList = element("ul").addTo(countryBorderCountries);
     const countryIndex = await getCountryIndex();
-    Array.from(data.borders).forEach((code) => {
-      const liEl = element("li").addTo(borderList);
-      element("a")
-        .attribute("href", "/country.html?country=" + code)
-        .text(countryIndex[code])
-        .addTo(liEl);
-    });
+    if (data.borders) {
+      Array.from(data.borders).forEach((code) => {
+        const liEl = element("li").addTo(borderList);
+        element("a")
+          .attribute("href", "/country.html?country=" + code)
+          .text(countryIndex[code])
+          .addTo(liEl);
+      });
+    }
   }
 }

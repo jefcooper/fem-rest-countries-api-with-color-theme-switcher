@@ -34,14 +34,34 @@ async function performSearch() {
   fillSearchResults(filteredResult);
 }
 
-function fillSearchResults(result) {
+async function fillSearchResults(result) {
   searchResults.innerText = "";
+  const index = await countryIndex();
   result.forEach((country) => {
-    const liEl = element("li").addTo(searchResults);
-    element("a")
+    const liEl = element("li").class("card").addTo(searchResults);
+    const aEl = element("a")
       .attribute("href", "/country.html?country=" + country[1])
-      .text(country[0])
       .addTo(liEl);
+    element("img")
+      .class("card__flag")
+      .attribute("src", index[country[1]].flag)
+      .attribute("loading", "lazy")
+      .addTo(aEl);
+    const cardInfoEl = element("div").class("card__info").addTo(aEl);
+    element("h2").text(country[0]).class("heading--2").addTo(cardInfoEl);
+    const dl = element("dl").addTo(cardInfoEl);
+    element("dt").text("Population").class("label--1").addTo(dl);
+    element("dd")
+      .text(Number.parseInt(index[country[1]].population, 10).toLocaleString())
+      .class("text--1")
+      .addTo(dl);
+    element("dt").text("Region").class("label--1").addTo(dl);
+    element("dd").text(index[country[1]].region).class("text--1").addTo(dl);
+    element("dt").text("Capital").class("label--1").addTo(dl);
+    element("dd")
+      .text(index[country[1]].capital || "none")
+      .class("text--1")
+      .addTo(dl);
   });
 }
 
@@ -62,6 +82,20 @@ async function countrySearch(name) {
     const data = await result.json();
     return data;
   }
+}
+
+let countryIndexData;
+
+async function countryIndex() {
+  if (!countryIndexData) {
+    const response = await fetch("/api/country-index");
+    if (response.status === 200) {
+      countryIndexData = await response.json();
+    } else {
+      console.log("error: " + response.status);
+    }
+  }
+  return countryIndexData;
 }
 
 async function regionSearch() {

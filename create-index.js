@@ -60,10 +60,21 @@ const countriesIndex = countries.reduce((acc, country) => {
       capital: country.capital,
       region: country.region,
       subregion: country.subregion,
-      flags: country.flags,
+      flag: country.flag,
     },
   });
 }, {});
+
+fs.writeFile(
+  "./data/countries-index.json",
+  JSON.stringify(countriesIndex),
+  "utf8",
+  (err) => {
+    if (err) {
+      console.log(err);
+    }
+  }
+);
 
 //
 // country name index
