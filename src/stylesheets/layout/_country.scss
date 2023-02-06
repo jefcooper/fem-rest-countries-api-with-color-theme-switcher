@@ -1,0 +1,37 @@
+@use "../abstracts";
+
+.country {
+  padding-inline: 1.75rem;
+  padding-block: 2.5rem;
+}
+.country__flag {
+  margin-top: 4rem;
+}
+.country__title {
+  margin-top: 3rem;
+}
+.country__info {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.country__details {
+  margin-top: 0.5rem;
+}
+
+.country__details dt {
+  display: inline;
+}
+.country__details dt::after {
+  content: ":";
+  margin-right: 0.5rem;
+}
+
+.country__details dd {
+  display: inline;
+}
+.country__details dd::after {
+  content: "";
+  display: block;
+  margin-bottom: 0.5rem;
+}

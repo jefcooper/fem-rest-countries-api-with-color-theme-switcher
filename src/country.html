@@ -31,42 +31,51 @@
     </div>
   </header>
 
-  <main class="main">
+  <main class="country">
     <h1 class="visually-hidden">Country Details</h1>
 
-    <a href="/index.html" class="btn btn--primary">Back</a>
+    <a href="/index.html" class="btn btn--primary">
+      <svg class="icon icon--left-arrow">
+        <use href="./assets/icons.svg#icon--left-arrow"></use>
+      </svg>
+      <span>Back</span>
+    </a>
 
-    <h2 data-country-name></h2>
-    <img data-country-flag src="" alt="">
+    <img class="country__flag" data-country-flag src="" alt="">
+    <h2 class="country__title heading--3" data-country-name></h2>
 
-    <dl>
-      <dt>Native Name</dt>
-      <dd data-country-native-name></dd>
+    <div class="country__info">
+      <dl class="country__details">
+        <dt class="label--1">Native Name</dt>
+        <dd class="text--1" data-country-native-name></dd>
 
-      <dt>Population</dt>
-      <dd data-country-population></dd>
+        <dt class="label--1">Population</dt>
+        <dd class="text--1" data-country-population></dd>
 
-      <dt>Region</dt>
-      <dd data-country-region></dd>
+        <dt class="label--1">Region</dt>
+        <dd class="text--1" data-country-region></dd>
 
-      <dt>Sub-region</dt>
-      <dd data-country-subregion></dd>
+        <dt class="label--1">Sub-region</dt>
+        <dd class="text--1" data-country-subregion></dd>
 
-      <dt>Capital</dt>
-      <dd data-country-capital></dd>
+        <dt class="label--1">Capital</dt>
+        <dd class="text--1" data-country-capital></dd>
+      </dl>
 
-      <dt>Top-level Domain</dt>
-      <dd data-country-top-level-domain></dd>
+      <dl class="country__details">
+        <dt class="label--1">Top-level Domain</dt>
+        <dd class="text--1" data-country-top-level-domain></dd>
 
-      <dt>Currencies</dt>
-      <dd data-country-currencies></dd>
+        <dt class="label--1">Currencies</dt>
+        <dd class="text--1" data-country-currencies></dd>
 
-      <dt>Languages</dt>
-      <dd data-country-languages></dd>
+        <dt class="label--1">Languages</dt>
+        <dd class="text--1" data-country-languages></dd>
 
-      <dt>Border Countries</dt>
-      <dd data-country-border-countries></dd>
-    </dl>
+        <dt class="label--1">Border Countries</dt>
+        <dd class="text--1" data-country-border-countries></dd>
+      </dl>
+    </div>
 
     <!--
       back link arrow

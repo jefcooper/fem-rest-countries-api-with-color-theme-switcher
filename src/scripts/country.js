@@ -52,13 +52,16 @@ async function loadCountry(country) {
     countryFlag.setAttribute("src", data.flag);
 
     countryNativeName.innerText = data.nativeName;
-    countryPopulation.innerText = data.population;
+    countryPopulation.innerText = Number.parseInt(
+      data.population,
+      10
+    ).toLocaleString();
     countryRegion.innerText = data.region;
     countrySubregion.innerText = data.subregion;
     countryCapital.innerText = data.capital;
     countryTopLevelDomain.innerText = data.topLevelDomain.join(", ");
     countryCurrencies.innerText = data.currencies
-      .map(({ code, name }) => name + "(" + code + ")")
+      .map(({ code, name }) => name + " (" + code + ")")
       .join(", ");
     countryLanguages.innerText = data.languages.map((el) => el.name).join(", ");
     //countryBorderCountries.innerText = data.borders.join(", ");
