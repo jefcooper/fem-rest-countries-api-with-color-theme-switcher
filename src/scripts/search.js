@@ -61,14 +61,23 @@ searchInput?.addEventListener("keydown", async function (evt) {
 regionSelect?.addEventListener("change", (evt) => {
   const updatedUrl =
     location.origin + location.pathname + "?region=" + evt.target.value;
-  history.pushState({}, null, updatedUrl);
+  console.log("pushstate");
+  history.pushState(
+    {
+      countries: true,
+      site: location.origin + location.pathname,
+      region: evt.target.value,
+    },
+    null,
+    updatedUrl
+  );
   history.scrollRestoration = "manual";
   updateRegionFilter(evt.target.value);
   performSearch();
 });
 
 window.addEventListener("popstate", (evt) => {
-  const newRegion = new URLSearchParams(location.search).get("region");
+  const newRegion = new URLSearchParams(location.search).get("region") || "all";
   regionSelect.value = newRegion;
   updateRegionFilter(newRegion);
   performSearch();

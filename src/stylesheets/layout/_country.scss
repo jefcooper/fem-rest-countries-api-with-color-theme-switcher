@@ -35,3 +35,16 @@
   display: block;
   margin-bottom: 0.5rem;
 }
+.country__border-label::before {
+  content: "";
+  display: block;
+  margin-top: 3rem;
+}
+.country__border-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: abstracts.pxToRem(10px);
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+}

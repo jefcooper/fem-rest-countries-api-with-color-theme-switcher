@@ -2,7 +2,9 @@ import element from "./element-factory";
 
 const searchParams = new URLSearchParams(location.search);
 const country = searchParams.get("country");
+const region = searchParams.get("region");
 
+const backButton = document.querySelector("[data-country-back]");
 const countryName = document.querySelector("[data-country-name]");
 const countryFlag = document.querySelector("[data-country-flag]");
 const countryNativeName = document.querySelector("[data-country-native-name]");
@@ -19,8 +21,21 @@ const countryBorderCountries = document.querySelector(
   "[data-country-border-countries]"
 );
 
+console.log("referrer: " + document.referrer);
+const referrer = document.referrer;
+
 if (country) {
   loadCountry(country);
+}
+
+if (backButton) {
+  console.log("referrer: " + document.referrer);
+  backButton.addEventListener("click", (evt) => {
+    console.log("back: " + referrer);
+    history.pushState({}, null, referrer);
+    //location.assign(referrer);
+    //history.back();
+  });
 }
 
 let countries;
@@ -65,13 +80,16 @@ async function loadCountry(country) {
       .join(", ");
     countryLanguages.innerText = data.languages.map((el) => el.name).join(", ");
     //countryBorderCountries.innerText = data.borders.join(", ");
-    const borderList = element("ul").addTo(countryBorderCountries);
+    const borderList = element("ul")
+      .class("country__border-list")
+      .addTo(countryBorderCountries);
     const countryIndex = await getCountryIndex();
     if (data.borders) {
       Array.from(data.borders).forEach((code) => {
         const liEl = element("li").addTo(borderList);
         element("a")
           .attribute("href", "/country.html?country=" + code)
+          .class("country__border-country btn btn--primary")
           .text(countryIndex[code])
           .addTo(liEl);
       });
