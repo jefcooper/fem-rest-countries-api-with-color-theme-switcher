@@ -15,7 +15,19 @@ class ElementFactory {
     return this;
   }
   class(val) {
-    this.el.classList.add(val);
+    // accept a number of different lsit delimiters, or single value
+    const match = /[,.;: ]/g;
+
+    // create an array of them
+    const classList = val
+      .replaceAll(match, " ")
+      .split(" ")
+      .filter((a) => a);
+
+    // add each class name in the array to the element in sequence
+    classList.forEach((c) => {
+      this.el.classList.add(c);
+    });
     return this;
   }
   attribute(key, val) {
